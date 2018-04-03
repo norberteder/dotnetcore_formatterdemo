@@ -1,0 +1,38 @@
+<table class='table table-hover table-sm table-responsive-sm' *ngIf="appointment">
+  <tr>
+    <td>Organizer</td>
+    <td>{{appointment.organizer.firstName}} {{appointment.organizer.lastName}}, {{appointment.organizer.organization}}</td>
+  </tr>
+  <tr>
+    <td>Location</td>
+    <td>{{appointment.location}}</td>
+  </tr>
+  <tr>
+    <td>Start</td>
+    <td>{{appointment.start}}</td>
+  </tr>
+  <tr>
+    <td>End</td>
+    <td>{{appointment.end}}</td>
+  </tr>
+  <tr>
+    <td>Title</td>
+    <td>{{appointment.title}}</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>{{appointment.description}}</td>
+  </tr>
+</table>
+
+<span *ngIf="icalendar">
+  <pre>{{icalendar}}</pre>
+</span>
+
+<h1>Choose an action</h1>
+
+<div>
+  <button (click)="loadAppointment()">Load appointment</button>
+  <button (click)="loadICalendar()">Load iCalendar</button>
+  <a href="http://localhost:5000/api/1/appointment/1.ics">Download iCal</a>
+</div>
